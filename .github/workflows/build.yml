@@ -12,6 +12,9 @@ jobs:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }}, or ${{ steps.extract_branch.outputs.branch }} for short, and your repository is ${{ github.repository }}."
+      - name: Enforce branch name
+        run: echo '🎉 successfully matched branch name! 🎉'
+        if: ${{ 'feat/pt-1-example' }} == ${{ steps.extract_branch.outputs.branch }}
       - name: Check out repository code
         uses: actions/checkout@v3
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
