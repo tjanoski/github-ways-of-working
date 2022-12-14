@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
+      with:
+        fetch-depth: 1
     - uses: paulhatch/semantic-version@v4.0.2
       with:
         # The prefix to use to identify tags
@@ -32,7 +34,7 @@ jobs:
         # Named version, will be used as suffix for name version tag
         # namespace: my-service
         # If this is set to true, *every* commit will be treated as a new version.
-        # bump_each_commit: false
+        bump_each_commit: true
         # If true, the body of commits will also be searched for major/minor patterns to determine the version type.
         # search_commit_body: false
         # The output method used to generate list of users, 'csv' or 'json'.
