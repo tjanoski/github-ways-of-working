@@ -2,8 +2,10 @@ name: Bump version
 on:
   pull_request:
     branches:
-      - master
-  [workflow_dispatch]
+      - main
+  push:
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
