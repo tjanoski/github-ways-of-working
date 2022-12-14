@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
       with:
-        fetch-depth: 1
+        fetch-depth: 0
     - uses: paulhatch/semantic-version@v4.0.2
       with:
         # The prefix to use to identify tags
