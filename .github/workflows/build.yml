@@ -9,7 +9,7 @@ jobs:
         shell: bash
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: extract_branch
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} (${{steps.extract_branch.outputs.branch}} for short) and your repository is ${{ github.repository }}."
       - if: ${{ 'feat/pt-1-example-bad-example' }} == steps.extract_branch.outputs.branch
         name: Enforce branch name
         run: echo '🎉 successfully matched branch name! 🎉'
