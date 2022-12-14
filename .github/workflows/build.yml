@@ -5,14 +5,14 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
-      # - name: Extract branch name
-      #   shell: bash
-      #   run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-      #   id: extract_branch
-      # - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - if: 'feat/pt-1-example' == steps.extract_branch.outputs.branch
-        name: Enforce branch name
-        run: echo '🎉 successfully matched branch name! 🎉'
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      # - if: 'feat/pt-1-example' == steps.extract_branch.outputs.branch
+      #   name: Enforce branch name
+      #   run: echo '🎉 successfully matched branch name! 🎉'
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v3
