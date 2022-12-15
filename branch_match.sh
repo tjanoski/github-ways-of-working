@@ -9,6 +9,6 @@ if [[ $BRANCH_NAME =~ $regx ]]; then
     elif [[ $BRANCH_NAME =~ $stable_branch_pattern ]]; then
         echo "Stable Branch detected!"
     else
+        echo "Unmatched pattern! Failing out..."
         exit 1
     fi
-    
