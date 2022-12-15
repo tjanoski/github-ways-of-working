@@ -1,6 +1,9 @@
 name: Build
 run-name: ${{ github.actor }} is building
 on: [push]
+
+env:
+  BRANCH_NAME: ${{ github.ref }}  
 jobs:
   Build:
     runs-on: ubuntu-latest
