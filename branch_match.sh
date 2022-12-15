@@ -11,3 +11,4 @@ if [[ $BRANCH_NAME =~ $regx ]]; then
     else
         exit 1
     fi
+    
