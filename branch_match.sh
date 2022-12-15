@@ -1,7 +1,7 @@
 
 string="chore/pss-1-example"
 # regx='/\b(feat|bug|chore)\b\/\b(pss|ui)\b-\b[1-9][0-9]{0,4}\b.*'
-branch_pattern_regx='refs\/heads\/(feat|bug|chore)\/(pss|ui)-[0-9]{0,4}.*'
+branch_pattern_regx='refs\/heads\/(feat|bug|chore)\/(pss|ui)-[0-9]'
 stable_branch_pattern='refs\/heads\/(main|dev|test)'
 
 if [[ $BRANCH_NAME =~ $regx ]]; then
