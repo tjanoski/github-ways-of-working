@@ -9,17 +9,15 @@ jobs:
         shell: bash
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: extract_branch
-        
       - run: echo "🔎 The name of your branch is ${{ github.ref }} (${{steps.extract_branch.outputs.branch}} for short) and your repository is ${{ github.repository }}."
-      - name: Enforce branch name
-        run: ./branch_match.sh
-      
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v3
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: Enforce branch name
+        run: ./branch_match.sh
       - name: Execute build script
         run: ./build.sh
       - run: echo "🍏 This job's status is ${{ job.status }}."
